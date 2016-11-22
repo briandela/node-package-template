@@ -6,7 +6,8 @@
   "scripts": {
     "test": "lab -c -t 100 -r console -o stdout -r html -o coverage/coverage.html test/unit",
     "coverage": "lab -r html -o coverage/coverage.html test/unit && open coverage/coverage.html",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "pre-commit": "npm run lint && npm test"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,7 @@
   },
   "homepage": "https://github.com/briandela/node-package-template#readme",
   "pre-commit": [
-    "lint",
-    "test"
+    "pre-commit"
   ],
   "devDependencies": {
     "code": "4.0.0",
